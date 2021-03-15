@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kart</title>
+    
+    <style type="text/css">
+      /* Størrelsen på kartet */
+      #map {
+        height: 400px;
+        
+        width: 100%;
+      }
+    </style>
+    
+    <script>
+		// Lagrer koordinatene som konstanter
+		const wild = { lat: 69.19882694217213, lng: 17.4579961325449 };
+		const storfjord = { lat: 62.46953357100632, lng: 6.62506024510111910 }
+		const norefjell = { lat: 60.22691546050356, lng: 9.519865426191632 }
+		const briksdal = { lat: 61.66316348001572, lng: 6.822366784545326 }
+		const gudvangen = { lat: 60.880906927981954, lng: 6.84154422117251 }
+      
+		// Bestemmer posisjonen til kartet
+      function initMap(sted) {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: sted,
+        });
+       
+		  // Bestemmer posisjonen til markøren
+        const marker = new google.maps.Marker({
+          position: sted,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  
+  <body>
+  	<!-- Legger til knappene som kjører funksjonen -->
+   <input type="button" value="Norwegian Wild" onclick="initMap(wild)">
+   <input type="button" value="Stofjord Hotel" onclick="initMap(storfjord)">
+   <input type="button" value="Norefjell Ski & Spa" onclick="initMap(norefjell)">
+   <input type="button" value="Briksdalsbre Fjellstove" onclick="initMap(briksdal)">
+   <input type="button" value="Gudvangen Fjordtell" onclick="initMap(gudvangen)">
+   
+     <!--Kartet -->
+    <div id="map"></div>
+
+    <!-- Henter kart fra Google Maps med API nøkkel -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa7s-S-haXCx-7yUIxSBd_pIwsiLqKrAk&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+  </body>
+</html>
