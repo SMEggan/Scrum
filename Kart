@@ -22,7 +22,7 @@
       
 		// Bestemmer posisjonen til kartet
       function initMap(sted) {
-        const map = new google.maps.Map(document.getElementById("map"), {
+        const kart = new google.maps.Map(document.getElementById("map"), {
           zoom: 15,
           center: sted,
         });
@@ -30,7 +30,7 @@
 		  // Bestemmer posisjonen til markøren
         const marker = new google.maps.Marker({
           position: sted,
-          map: map,
+          map: kart,
         });
       }
     </script>
