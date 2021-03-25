@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<title>Favoritter</title>
+	<body>
+		<p>Hotell</p>
+		<p id="hotellDiv"></p>
+		<p>Favoritter</p>
+		<p id="favDiv"></p>
+	</body>
+	<script>
+		let hotelliste = ["Norwegian Wild", "Stofjord Hotel", "Norefjell Ski og Spa", "Brikdalsbre Fjellstove", "Gudvangen Fjordtell"];
+		let favoritter = [];
+		skrivhliste();
+		skrivfliste();
+		function klikk(event) {
+    		const button = event.currentTarget;
+    		const hotel = button.dataset.hotel;
+    		leggTil(hotel);
+		}
+		function klikk2(event) {
+			const button = event.currentTarget;
+			const hotel = button.dataset.hotel;
+			fjern(hotel);
+		}
+		
+		function skrivhliste(){
+			document.getElementById("hotellDiv").innerHTML = "";
+			for (var j = 0; j < hotelliste.length; j++){
+				const button = document.createElement('input');
+				button.type = 'button';
+				button.value = hotelliste[j];
+				button.dataset.hotel = hotelliste[j];
+				button.addEventListener('click', klikk);
+				document.getElementById("hotellDiv").appendChild(button);
+			}
+		}
+		function skrivfliste(){
+			document.getElementById("favDiv").innerHTML = "";
+			for (var j = 0; j < favoritter.length; j++){
+				const button = document.createElement('input');
+				button.type = 'button';
+				button.value = favoritter[j];
+				button.dataset.hotel = favoritter[j];
+				button.addEventListener('click', klikk2);
+				document.getElementById("favDiv").appendChild(button);
+			}
+		}
+		
+		function leggTil(hotell){
+			if (hotelliste.indexOf(hotell) > -1) {
+  				hotelliste.splice(hotelliste.indexOf(hotell), 1);
+			}
+			favoritter.push(hotell);
+			skrivhliste();
+			skrivfliste();
+		}
+		function fjern(hotell){
+			if (favoritter.indexOf(hotell) > -1) {
+				favoritter.splice(favoritter.indexOf(hotell), 1);
+			}
+			hotelliste.push(hotell);
+			skrivhliste();
+			skrivfliste();
+		}
+	</script>
+</html>
