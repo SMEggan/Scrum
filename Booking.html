@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Hotell Booking</title>
-    <script></script>
   </head>
        <h1>Hotell reservasjon</h1>
         <form action="" method="GET">
            <fieldset>
                <legend>Personlig informasjon:</legend>
-               <label for="Fornavn">Fornavnnavn:</label><input type="text" name="brukernavn" id="Fornavn" required autofocus placeholder="Fornavn" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
-               <label for="Etternavn">Etternavn: </label><input type="text" name="Etternavn" id="Etternavn" required autofocus placeholder="Etternavn" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
+               <label for="Fornavn">Fornavn:</label><input type="text" name="brukernavn" id="Fornavn" required autofocus placeholder="Fornavn" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
+               <label for="Etternavn">Etternavn: </label><input type="text" name="Etternavn" id="Etternavn"  required placeholder="Etternavn" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
+               <label for="email">Email: </label><input type="text" name="email" id="email" required placeholder="Email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" title="Vennligst skriv inn en gyldig email">
          </fieldset>
            <br>
            <fieldset>
                <legend>Booking informasjon</legend>
-               <label for="Dato">Booking dato: </label><input id="Dato" type="date" name="Dato" min="2020-12-02">
+               <label for="Dato">Innsjekksdato: </label><input id="Dato" type="date" name="Innsjekk" min="2021-3-02">
+               <br>
+               <label for="Utsjekk">Utsjekksdato: </label><input id="Dato" type="date" name="Utsjekk" min="2021-3-02">
+               <br>
               <label for="Antall gjester">Antall gjester: </label><input id="Antall gjester" type="number" name="Antall personer" min="1" max="4">
               
-               
-               
-           </fieldset>
-            
+        </fieldset>
+            <! KODEN FOR BESTILLKNAPP-- --> 
+        <button id="bButton" type="button" onclick="alert('Din bestilling er registrert')">Bestill</button>
+    
+
+    
         </form>
+        <script>
+           document.getElementById 
+            
+            
+    
+        </script>
   <body>
      
       
