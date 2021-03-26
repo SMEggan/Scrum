@@ -10,6 +10,12 @@
 	<script>
 		let hotelliste = ["Norwegian Wild", "Stofjord Hotel", "Norefjell Ski og Spa", "Brikdalsbre Fjellstove", "Gudvangen Fjordtell"];
 		let favoritter = [];
+		
+		for(i = 0; i < hotelliste.length; i++) {
+			if(window.localStorage.getItem(String(i))==="ja"){
+				favoritter.push(hotelliste[i]);
+			}
+		}
 		skrivhliste();
 		skrivfliste();
 		function klikk(event) {
@@ -47,20 +53,24 @@
 		}
 		
 		function leggTil(hotell){
-			if (hotelliste.indexOf(hotell) > -1) {
-  				hotelliste.splice(hotelliste.indexOf(hotell), 1);
+			
+			if(favoritter.includes(hotell)===false){
+				favoritter.push(hotell);
 			}
-			favoritter.push(hotell);
-			skrivhliste();
+			
 			skrivfliste();
+			
+			window.localStorage.setItem(String(hotelliste.indexOf(hotell)), "ja");
 		}
 		function fjern(hotell){
 			if (favoritter.indexOf(hotell) > -1) {
 				favoritter.splice(favoritter.indexOf(hotell), 1);
 			}
-			hotelliste.push(hotell);
-			skrivhliste();
+			
+			
 			skrivfliste();
+			
+			window.localStorage.setItem(String(hotelliste.indexOf(hotell)), "nei");
 		}
 	</script>
 </html>
