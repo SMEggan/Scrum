@@ -1,0 +1,28 @@
+.slideContent{
+    align-content: center;
+    align-items: center
+}
+
+.mySlides {
+    display:none;
+    height: 400px;
+
+}
+
+.slideContent{
+    margin: auto;
+    border-top-style: solid;
+    border-top-color: black;
+    border-top-width: 10px;
+    background-color: white;
+    width: 800px;
+
+}
+
+.animasjon-fading{
+    animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}
+} /*Her blir bildene animert ut og inn i sliden.*/
+
+body{
+    background-color: #99ffcc;
+}

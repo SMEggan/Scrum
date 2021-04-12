@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    
+    <link rel="stylesheet" type="text/css" href="hotell.css"/>
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+
+    <h2>Automatic Slideshow</h2>
+
+    <div class="slideContent" style="max-width:1000px" style="max-height: 700px">
+        <img class="mySlides animasjon-fading" src="norsk_fjord.jpg" style="width:100%" style="height: 100%">
+        <img class="mySlides animasjon-fading" src="norsk_fjordlandsby.jpg" style="width:100%" style="height: 100%">
+        <img class="mySlides animasjon-fading" src="norsk_g%C3%A5rd.jpg" style="width:100%" style="height: 100%">
+        <img class="mySlides animasjon-fading" src="trolltunga.jpg" style="width:100%" style="height: 100%">
+    </div> <!--Denne div(en) inneholder alle bildene som også har fått gitt maks høyde og bredde. Div(en) har også en maks høyde og bredde med en class som skal tas i bruk senere i koden. --> 
+
+<script>
+    var myIndex = 0; //Her blir en verdi laget
+    carousel(); //Denne funksjonen blir konstant kjørt til det skjer noe.
+
+    function carousel() {
+        var i; //Tall
+        var x = document.getElementsByClassName("mySlides"); //Verdi
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        } //Dette er en array som velger hvert bilde ut i fra den verdien det har, når verdien kommer vil bildet som har den verdien vises.
+        myIndex++;
+        if (myIndex > x.length) {
+            myIndex = 1
+        }    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 9000); //Denne bestemmer hvor lang tid det går mellom animasjonene.  
+    }
+</script>
+
+</body>
+</html>
