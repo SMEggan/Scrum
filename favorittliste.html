@@ -1,76 +1,66 @@
 <!DOCTYPE html>
-<html>
-	<title>Favoritter</title>
-	<body>
-		<p>Hotell</p>
-		<p id="hotellDiv"></p>
-		<p>Favoritter</p>
-		<p id="favDiv"></p>
-	</body>
-	<script>
-		let hotelliste = ["Norwegian Wild", "Stofjord Hotel", "Norefjell Ski og Spa", "Brikdalsbre Fjellstove", "Gudvangen Fjordtell"];
-		let favoritter = [];
-		
-		for(i = 0; i < hotelliste.length; i++) {
-			if(window.localStorage.getItem(String(i))==="ja"){
-				favoritter.push(hotelliste[i]);
-			}
-		}
-		skrivhliste();
-		skrivfliste();
-		function klikk(event) {
-    		const button = event.currentTarget;
-    		const hotel = button.dataset.hotel;
-    		leggTil(hotel);
-		}
-		function klikk2(event) {
-			const button = event.currentTarget;
-			const hotel = button.dataset.hotel;
-			fjern(hotel);
-		}
-		
-		function skrivhliste(){
-			document.getElementById("hotellDiv").innerHTML = "";
-			for (var j = 0; j < hotelliste.length; j++){
-				const button = document.createElement('input');
-				button.type = 'button';
-				button.value = hotelliste[j];
-				button.dataset.hotel = hotelliste[j];
-				button.addEventListener('click', klikk);
-				document.getElementById("hotellDiv").appendChild(button);
-			}
-		}
-		function skrivfliste(){
-			document.getElementById("favDiv").innerHTML = "";
-			for (var j = 0; j < favoritter.length; j++){
-				const button = document.createElement('input');
-				button.type = 'button';
-				button.value = favoritter[j];
-				button.dataset.hotel = favoritter[j];
-				button.addEventListener('click', klikk2);
-				document.getElementById("favDiv").appendChild(button);
-			}
-		}
-		
-		function leggTil(hotell){
-			
-			if(favoritter.includes(hotell)===false){
-				favoritter.push(hotell);
-			}
-			
-			skrivfliste();
-			
-			window.localStorage.setItem(String(hotelliste.indexOf(hotell)), "ja");
-		}
-		function fjern(hotell){
-			if (favoritter.indexOf(hotell) > -1) {
-				favoritter.splice(favoritter.indexOf(hotell), 1);
-			}
-			
-			
-			skrivfliste();
-			
-			window.localStorage.setItem(String(hotelliste.indexOf(hotell)), "nei");
-		}
-	</script>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>favorittliste</title>
+    <style>
+        .liste li {
+            cursor: pointer;
+        }
+
+        .liste li:hover:after,
+        .liste li.fav:after {
+            content: '\2605';
+            color: yellow;
+        }
+
+        .liste li.fav:hover:after {
+            content: '\2606';
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="liste">
+        <li id="norWild">Norwegian Wild</li>
+        <li id="storfjord">Storfjord Hotell</li>
+        <li id="norefjell">Norefjell ski og spa</li>
+        <li id="briksdal">Briksdal</li>
+        <li id="gudvangen">Gudvangen</li>
+    </ul>
+</body>
+
+<script>
+    // get favorites from local storage or empty array
+    var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    // add class 'fav' to each favorite
+    favorites.forEach(function(favorite) {
+        document.getElementById(favorite).className = 'fav';
+    });
+    // register click event listener
+    document.querySelector('.liste').addEventListener('click', function(e) {
+        var id = e.target.id,
+            item = e.target,
+            index = favorites.indexOf(id);
+        // return if target doesn't have an id (shouldn't happen)
+        if (!id) return;
+        // item is not favorite
+        if (index == -1) {
+            favorites.push(id);
+            item.className = 'fav';
+            // item is already favorite
+        } else {
+            favorites.splice(index, 1);
+            item.className = '';
+        }
+        // store array in local storage
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    });
+
+    // local storage stores strings so we use JSON to stringify for storage and parse to get out of storage
+
+</script>
+
 </html>
