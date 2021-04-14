@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<title>Favoritter</title>
+	<style type="text/css">
+    	/* Størrelsen på kartet */
+      	#map {
+        	height: 400px;
+        
+        	width: 100%;
+      	}
+		.knapp {
+			
+  			background-color: inherit;
+			padding: 14px 28px;
+			font-size: 16px;
+			cursor: pointer;
+			display: block;
+		}
+		.knapp:hover{
+			background-color: gainsboro;
+		}
+		.button {
+			
+		}
+    </style>
+	<body>
+		<p>Hotell</p>
+		<p id="hotellDiv"></p>
+		<p>Favoritter</p>
+		<p id="favDiv"></p>
+		<p id="map"></p>
+		<p id="info"></p>
+	</body>
+	<script>
+		let hotelliste = ["Norwegian Wild", "Stofjord Hotel", "Norefjell Ski og Spa", "Brikdalsbre Fjellstove", "Gudvangen Fjordtell"];
+		let favoritter = [];
+		let info = ["NWinfo","SHinfo","NSoSinfo","BFinfo","GFinfo"];
+		
+		for(i = 0; i < hotelliste.length; i++) {
+			if(window.localStorage.getItem(String(i))==="ja"){
+				favoritter.push(hotelliste[i]);
+			}
+		}
+		skrivhliste();
+		skrivfliste();
+		function klikk(event) {
+    		const button = event.currentTarget;
+    		const hotel = button.dataset.hotel;
+    		leggTil(hotel);
+		}
+		function klikk2(event) {
+			const button = event.currentTarget;
+			const hotel = button.dataset.hotel;
+			fjern(hotel);
+		}
+		
+		
+		function skrivhliste(){
+			document.getElementById("hotellDiv").innerHTML = "";
+			
+			for (var j = 0; j < hotelliste.length; j++){
+				
+				const knapp = document.createElement('input');
+				knapp.type = 'button';
+				knapp.value = hotelliste[j];
+				knapp.className = "knapp";
+				knapp.onclick = function(){
+					initMap(eval("kart"+String(hotelliste.indexOf(knapp.value))));
+					document.getElementById("info").innerHTML = info[hotelliste.indexOf(knapp.value)];
+				}
+				document.getElementById("hotellDiv").appendChild(knapp);
+				
+				const button = document.createElement('input');
+				button.type = 'button';
+				button.value = "Legg til som favoritt";
+				button.className = "button";
+				button.dataset.hotel = hotelliste[j];
+				button.addEventListener('click', klikk);
+				document.getElementById("hotellDiv").appendChild(button);
+				
+				
+			}
+		}
+		function skrivfliste(){
+			document.getElementById("favDiv").innerHTML = "";
+			for (var j = 0; j < favoritter.length; j++){
+				const knapp = document.createElement('input');
+				knapp.type = 'button';
+				knapp.value = favoritter[j];
+				knapp.className = "knapp";
+				knapp.onclick = function(){
+					initMap(eval("kart"+String(favoritter.indexOf(knapp.value))));
+					document.getElementById("info").innerHTML = info[hotelliste.indexOf(knapp.value)];	
+				}
+				document.getElementById("favDiv").appendChild(knapp);
+				
+				const button = document.createElement('input');
+				button.type = 'button';
+				button.value = "Fjern fra favoritter";
+				button.className = "button";
+				button.dataset.hotel = favoritter[j];
+				button.addEventListener('click', klikk2);
+				document.getElementById("favDiv").appendChild(button);
+				
+			}
+		}
+		
+		function leggTil(hotell){
+			
+			if(favoritter.includes(hotell)===false){
+				favoritter.push(hotell);
+			}
+			
+			skrivfliste();
+			
+			window.localStorage.setItem(String(hotelliste.indexOf(hotell)), "ja");
+		}
+		function fjern(hotell){
+			if (favoritter.indexOf(hotell) > -1) {
+				favoritter.splice(favoritter.indexOf(hotell), 1);
+			}
+			
+			
+			skrivfliste();
+			
+			window.localStorage.setItem(String(hotelliste.indexOf(hotell)), "nei");
+		}
+		// Lagrer koordinatene som konstanter
+		kart0 = { lat: 69.19882694217213, lng: 17.4579961325449 };
+		kart1 = { lat: 62.46953357100632, lng: 6.62506024510111910 }
+		kart2 = { lat: 60.22691546050356, lng: 9.519865426191632 }
+		kart3 = { lat: 61.66316348001572, lng: 6.822366784545326 }
+		kart4 = { lat: 60.880906927981954, lng: 6.84154422117251 }
+      
+		// Bestemmer posisjonen til kartet
+      	function initMap(sted) {
+        	const kart = new google.maps.Map(document.getElementById("map"), {
+          		zoom: 15,
+          		center: sted,
+        	});
+       
+		  // Bestemmer posisjonen til markøren
+        	const marker = new google.maps.Marker({
+        		position: sted,
+        		map: kart,
+        	});
+      	}
+	</script>
+	<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa7s-S-haXCx-7yUIxSBd_pIwsiLqKrAk&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+</html>
