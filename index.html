@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kohort</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="images/logo.jpg">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="head-top">
+            <div class="site-name">
+                <span>Gruppe 4</span>
+            </div>
+            <div class="site-nav">
+                <span id="nav-btn">MENY<i class="fas fa-bars"></i></span>
+            </div>
+        </div>
+
+        <div class="head-bottom flex">
+            <h2>KOHORT</h2>
+            <p>I vår nettside kan du finne forskjellige hoteller rundt i Norge. Natur er tema. Finn et komfortabelt sted å bli!</p>
+        </div>
+    </header>
+    <!-- slutt header -->
+
+    <!-- side navbar -->
+    <div class="sidenav" id="sidenav">
+        <span class="cancel-btn" id="cancel-btn">
+            <i class="fas fa-times"></i>
+        </span>
+
+        <ul class="navbar">
+            <li><a href="#header">hjem</a></li>
+            <li><a href="#hotell">hotell</a></li>
+            <li><a href="#favliste">favorittliste</a></li>
+            <li><a href="#kohort">om kohort</a></li>
+            <li><a href="#kunder">kunder</a></li>
+        </ul>
+        <button class="btn sign-up">registrer deg</button>
+        <button class="btn log-in">logg inn</button>
+    </div>
+    <!-- slutt side navbar -->
+
+    <!-- fullskjerm  -->
+    <div id="modal"></div>
+    <!-- slutt fullskjerm -->
+
+    <!-- selve body -->
+    <section class="hotels sec-width" id="hotell">
+        <div class="title">
+            <h2>hoteller</h2>
+        </div>
+        <div class="hotels-container">
+            <!-- ett hotell -->
+            <article class="hotel">
+                <div class="hotel-image">
+                    <img src="images/norWild.jpg" alt="hotel image">
+                </div>
+                <div class="hotel-text">
+                    <h3>Norwegian Wild</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                    </ul>
+                    <p>info om hotellet...</p>
+                    <p class="rate">
+                        <span>1000,- /</span> Per Nattt
+                    </p>
+                    <button type="button" class="btn">Bestill nå</button>
+                </div>
+            </article>
+            <!-- slutt ett hotell -->
+            <!-- ett hotell -->
+            <article class="hotel">
+                <div class="hotel-image">
+                    <img src="images/storfjord%20hotell.jpg" alt="hotel image">
+                </div>
+                <div class="hotel-text">
+                    <h3>Storfjord Hotell</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                    </ul>
+                    <p>info om hotellet...</p>
+                    <p class="rate">
+                        <span>2000,- /</span> Per Natt
+                    </p>
+                    <button type="button" class="btn">Bestill nå</button>
+                </div>
+            </article>
+            <!-- slutt ett hotell -->
+            <!-- ett hotell -->
+            <article class="hotel">
+                <div class="hotel-image">
+                    <img src="images/norefjell.jpg" alt="hotel image">
+                </div>
+                <div class="hotel-text">
+                    <h3>Norefjell ski og spa</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                    </ul>
+                    <p>info om hotellet...</p>
+                    <p class="rate">
+                        <span>3000,- /</span> Per Natt
+                    </p>
+                    <button type="button" class="btn">Bestill nå</button>
+                </div>
+            </article>
+            <!-- slutt ett hotell -->
+            <!-- ett hotell -->
+            <article class="hotel">
+                <div class="hotel-image">
+                    <img src="images/briksdal.jpg" alt="hotel image">
+                </div>
+                <div class="hotel-text">
+                    <h3>Briksdal</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                    </ul>
+                    <p>info om hotellet...</p>
+                    <p class="rate">
+                        <span>4000,- /</span> Per Natt
+                    </p>
+                    <button type="button" class="btn">Bestill nå</button>
+                </div>
+            </article>
+            <!-- slutt ett hotell -->
+            <!-- ett hotell -->
+            <article class="hotel">
+                <div class="hotel-image">
+                    <img src="images/gudvangen.jpg" alt="hotel image">
+                </div>
+                <div class="hotel-text">
+                    <h3>Gudvangen Fjordtell</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                        <li>
+                            <i class="fas fa-arrow-alt-circle-right"></i>
+                            Et eller annet...
+                        </li>
+                    </ul>
+                    <p>info om hotellet...</p>
+                    <p class="rate">
+                        <span>7,- /</span> Per Natt
+                    </p>
+                    <button type="button" class="btn">Bestill nå</button>
+                </div>
+            </article>
+            <!-- slutt ett hotell -->
+        </div>
+    </section>
+
+    <!-- favorittliste  -->
+    <section class="favliste sec-width" id="favliste">
+        <div class="title">
+            <h2>favorittliste</h2>
+        </div>
+        <div class="favliste-container">
+            <!-- single favorittliste -->
+            <article class="favliste">
+                <div class="favliste-content">
+                    <h2>Hoteller</h2>
+                    <ul class="liste">
+                        <li id="norWild">Norwegian Wild</li>
+                        <li id="storfjord">Storfjord Hotell</li>
+                        <li id="norefjell">Norefjell ski og spa</li>
+                        <li id="briksdal">Briksdal</li>
+                        <li id="gudvangen">Gudvangen</li>
+                    </ul>
+                </div>
+            </article>
+            <!-- slutt single favorittlsite -->
+        </div>
+    </section>
+
+    <!-- kart -->
+    <div class="kart">
+
+    </div>
+    <!-- slutt kart -->
+
+
+    <!-- booking -->
+    <div class="book">
+        <form class="book-form">
+            <div class="form-item">
+                <label for="full-name">Fullt navn: </label>
+                <input type="text" name="full-name" id="full-name" required autofocus placeholder="Fullt navn" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
+            </div>
+            <div class="form-item">
+                <label for="email">e-Mail: </label>
+                <input type="text" name="email" id="email" required autofocus placeholder="@" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
+            </div>
+            <div class="form-item">
+                <label for="checkin-date">Sjekk-Inn Dato: </label>
+                <input type="date" id="chekin-date">
+            </div>
+            <div class="form-item">
+                <label for="checkout-date">Sjekk-Ut Dato: </label>
+                <input type="date" id="chekout-date">
+            </div>
+            <div class="form-item">
+                <label for="guests">Gjester: </label>
+                <input type="number" min="1" value="1" id="guests">
+            </div>
+            <div class="form-item">
+                <input type="submit" class="btn" value="Book Now">
+            </div>
+        </form>
+    </div>
+    <!-- slutt booking -->
+
+    <!-- kunder rating -->
+    <section class="customers" id="kunder">
+        <div class="sec-width">
+            <div class="title">
+                <h2>kunder</h2>
+            </div>
+            <div class="kunder-container">
+                <!-- kunde -->
+                <div class="customer">
+                    <div class="rating">
+                        <span><i class="fas fa-star"></i></span> <!-- stjerner -->
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="far fa-star"></i></span>
+                    </div>
+                    <h3>Insane.</h3>
+                    <p></p>
+                    <img src="images/cust1.jpg" alt="customer image">
+                    <span>Karen, Vietnam</span>
+                </div>
+                <!-- slutt kunde -->
+                <!-- kunde -->
+                <div class="customer">
+                    <div class="rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="far fa-star"></i></span>
+                    </div>
+                    <h3>Troverdig.</h3>
+                    <p></p>
+                    <img src="images/cust2.png" alt="customer image">
+                    <span>Mathias Nygård Tørstad, Norge</span>
+                </div>
+                <!-- slutt kunde -->
+                <!-- kunde -->
+                <div class="customer">
+                    <div class="rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                    </div>
+                    <h3>Fikk Happy Ending :)</h3>
+                    <p></p>
+                    <img src="images/cust3.jpg" alt="customer image">
+                    <span>Henki Beats, Polen</span>
+                </div>
+                <!-- slutt en kunde -->
+            </div>
+        </div>
+    </section>
+    <!-- slutt kunde rating -->
+    <!-- slutt på selve body -->
+
+    <!-- om kohort -->
+    <section class="services sec-width" id="kohort">
+        <div class="title">
+            <h2>Om Kohort</h2>
+        </div>
+        <div class="services-container">
+            <!-- single service -->
+            <article class="service">
+                <div class="service-icon">
+                    <span>
+                        <i class="fas fa-door-closed"></i>
+                    </span>
+                </div>
+                <div class="service-content">
+                    <h2>Hvordan man booker</h2>
+                    <p>kohort er et hotellsøk som finner hotellet som passer til deg. Du kan enkelt velge hotell, legge til informasjon om deg selv og trykk "Book nå".
+                    La kohort hjelpe deg med å finne riktig hotell for deg!</p>
+                </div>
+            </article>
+            <!-- end of single service -->
+            <!-- single service -->
+            <article class="service">
+                <div class="service-icon">
+                    <span>
+                        <i class="fas fa-broom"></i>
+                    </span>
+                </div>
+                <div class="service-content">
+                    <h2>Vi har fornøyde kunder</h2>
+                    <p>Over kan du lese om fornøyde kunder som har brukt vår nettside til å booke hotell.</p>
+                </div>
+            </article>
+            <!-- end of single service -->
+        </div>
+    </section>
+    <!-- slutt om kohort -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <h2>About Us </h2>
+                <p>Vi er gruppe 4: Sondre, Malin, Mats Olav, Kristoffer, Johnny.</p>
+            </div>
+
+            <div>
+                <h2>Linker</h2>
+                <a href="#hotell">Hoteller</a>
+                <a href="https://www.trivago.com/">Hotell?</a>
+                <a href="https://www.trivago.com/">Trivago.</a>
+            </div>
+
+            <div>
+                <h2>Kohort</h2>
+                <a href="#kohort">Om oss</a>
+            </div>
+
+            <div>
+                <h2>Kontakt oss ved:</h2>
+                <div class="contact-item">
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                    <span>
+                        Heimdal VGs
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                    <span>
+                        +47 454 13 290
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span>
+                        gruppe4@kohort.no
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- slutt footer -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
