@@ -4,37 +4,57 @@
     <meta charset="UTF-8">
     <title>Hotell Booking</title>
   </head>
+     <div>
+        <a href="Kvittering.HTML"></a> 
+     </div>
+      
        <h1>Hotell reservasjon</h1>
-        <form action="" method="GET">
-           <fieldset>
+        <form action="" method="GET"> 
+          <fieldset>
+             <legend>Velg et hotell</legend>
+             
+             <input class="Norwegian wild" name="hotel" type="radio" id="Hotel1" value="Norwegian wild"><label for="Hotel1">Norwegian wild</label>
+             
+             <input class="Norefjell ski og spa" name="hotel" type="radio" id="Hotel2" value="Norefjell Ski og Spa"> <label for="Hotel2">Norefjell Ski og Spa</label>
+              
+             <input class="Briksdal" name="hotel" type="radio" id="Hotel3" value="Briksdal"> <label for="Hotel3">Briksdal</label>
+              
+              <input class="Gudvangen Fjordtell" name="hotel"type="radio" id="Hotel4" value="Gudvangen Fjordtell"><label for="Hotel4">Gudvangen Fjordtell</label>
+               </fieldset>
+           
+              <fieldset>
                <legend>Personlig informasjon:</legend>
                <label for="Fornavn">Fornavn:</label><input type="text" name="brukernavn" id="Fornavn" required autofocus placeholder="Fornavn" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
                <label for="Etternavn">Etternavn: </label><input type="text" name="Etternavn" id="Etternavn"  required placeholder="Etternavn" pattern="[a-åA-Å]{3}" title="vennligst skriv inn mer enn tre tegn">
-               <label for="email">Email: </label><input type="text" name="email" id="email" required placeholder="Email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" title="Vennligst skriv inn en gyldig email">
+               <label for="Email">Email: </label><input type="text" name="email" id="email" required placeholder="Email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" title="Vennligst skriv inn en gyldig email">
+               <label for="Telefon">Telefon: </label><input type=number name="telefon" id="Telefon" required placeholder="Telefon" >
          </fieldset>
            <br>
            <fieldset>
                <legend>Booking informasjon</legend>
                <label for="Dato">Innsjekksdato: </label><input id="Dato" type="date" name="Innsjekk" min="2021-3-02">
-               <br>
+               
                <label for="Utsjekk">Utsjekksdato: </label><input id="Dato" type="date" name="Utsjekk" min="2021-3-02">
-               <br>
+           
               <label for="Antall gjester">Antall gjester: </label><input id="Antall gjester" type="number" name="Antall personer" min="1" max="4">
+              <br>
+              <a href="Sider/Kvittering.HTML">Bestill</a>
               
         </fieldset>
-            <! KODEN FOR BESTILLKNAPP-- --> 
-        <button id="bButton" type="button" onclick="alert('Din bestilling er registrert')">Bestill</button>
-    
+          
 
     
         </form>
         <script>
-           document.getElementById 
+           
             
             
     
         </script>
   <body>
+    <form action="Kvittering.HTML" method="GET">
+    
+    </form>
      
       
   </body>
