@@ -102,12 +102,9 @@ function bestilt() {
     
 }
 
-//får knappen til å fungere, lytter til knappen.
-bestillKnapp.addEventListener("click", kvitteringen)
-
 //Slutt JS til booking
 
-//JS til kart
+// JS til kart
 // Lagrer koordinatene som konstanter
 		const wild = { lat: 69.19882694217213, lng: 17.4579961325449 };
 		const storfjord = { lat: 62.46953357100632, lng: 6.62506024510111910 }
@@ -128,4 +125,5 @@ bestillKnapp.addEventListener("click", kvitteringen)
           map: kart,
         });
       }
-//Slutt JS til kart
+
+// Slutt JS til kart
