@@ -66,6 +66,8 @@ img {
     }
 }
 
+/* Forandrer styling når fanen bytter strl, her: font-size */
+
 /* header */
 .header {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url("images/banner-img.jpg") center/cover no-repeat;
@@ -194,7 +196,7 @@ img {
     }
 }
 
-/** title */
+/* title */
 .title {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -354,7 +356,7 @@ img {
     }
 }
 
-/* hotel */
+/* hotell */
 
 .hotell {
     margin: 40px 0;
@@ -559,18 +561,20 @@ img {
     color: #fff;
 }
 
-@media(min-width: 992px){
-    .services-container{
+@media(min-width: 992px) {
+    .services-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 30px;
     }
-    .title h2{
-        font-size: 10px!important;
+
+    .title h2 {
+        font-size: 10px !important;
     }
 }
-@media(max-width: 500px){
-    .title h2{
+
+@media(max-width: 500px) {
+    .title h2 {
         font-size: 24px;
     }
 }
@@ -641,4 +645,10 @@ img {
     bottom: 0;
     left: 0;
     z-index: 5;
+}
+
+#map {
+    height: 400px;
+
+    width: 100%;
 }
